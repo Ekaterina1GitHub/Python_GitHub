@@ -247,10 +247,3 @@ import os
 #     F2 = Fib_sum
 #     print(F2, end =' ')
 
-
-
-
-
-
-
-
