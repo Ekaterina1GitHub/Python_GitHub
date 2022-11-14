@@ -140,3 +140,4 @@
 # print("Деление: ", Número1 / Número2, Número1 / Número3, Número2 / Número1, Número2 / Número3, Número3 / Número1, Número3 / Número2)                    # операции деления 2 (/)
 # print("Возведение в степень: ", Número1 ** Número2, Número1 ** Número3, Número2 ** Número1, Número2 ** Número3, Número3 ** Número1, Número3 ** Número2) # операции возведения в степень (**)
 
+
