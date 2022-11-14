@@ -254,4 +254,3 @@
 #
 # print(int(mean_temp))                            # целое число
 # print(float(mean_temp))                          # число с плавающей точкой
-
