@@ -74,3 +74,39 @@
 #             except ZeroDivisionError:
 #                 print("На ноль делить нельзя!")      # Обработка ошибки: деление на ноль
 
+# 3 cпособ (из презентации):
+# print('two numbers: ')
+# a = float(input('1: '))
+# b = float(input('2: '))
+# print('+', '-', '*', '/', '0-exit')
+# print('operator: ')
+#
+# def plus(a, b):
+#     return a + b
+#
+# def minus(a, b):
+#     return a - b
+#
+# def proisv(a, b):
+#     return a * b
+#
+# def delen(a, b):
+#     if b == 0:
+#         return 'error'
+#     else:
+#         return a / b
+#
+# while True:                                   # все арифметич.операции - выводятся через цикл / перем. a и b - вне цикла
+#     x = input()
+#     if x == '0':
+#         break
+#     else:
+#         if x == '+':
+#             print('result: ', plus(a, b))
+#         if x == '-':
+#             print('result: ', minus(a, b))
+#         if x == '*':
+#             print('result: ', proisv(a, b))
+#         if x == '/':
+#             print('result: ', delen(a, b))
+#         print('operator: ')
