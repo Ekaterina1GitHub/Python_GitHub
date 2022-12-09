@@ -96,3 +96,4 @@
 # b.execute('''SELECT * FROM tab_1''')
 # v = b.fetchall()
 # print(v)                                          # Результат: [ ... , (3, 'world', 'world'), ... ]
+
