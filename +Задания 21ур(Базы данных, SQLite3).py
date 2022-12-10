@@ -37,10 +37,11 @@
 
 
                     # 21.3 Пример / Выведение записи из таблиц
-# 21.3.1 (1-ый способ)
 # b.execute('''SELECT * FROM tab_1''')      # SELECT * FROM tab_1 - SQL - запрос (SELECT, FROM - кл. слова)
 # v = b.fetchall()
-# print(v)                 # Результат: [(1, 'hello', 'world'), ... , (10, 'red', 'black'), (11, 'hello', 'world')]
+# print(v)                   # Результат: [(1, 'hello', 'world'), (2, 'red', 'black'), (3, 'hello', 'world'),
+                           # (4, 'red', 'black'), (5, 'hello', 'world'), (6, 'red', 'black')]
+
                            # Если закомментир-ть 23 либо 28 строку - добавится 1 запись в БД (23 либо 28 строка)
                            # Если закомментир-ть 23 и 28 строку - при запуске программы не добавится ни 1 запись в БД
 
@@ -53,7 +54,7 @@
 # B.execute('''CREATE TABLE IF NOT EXISTS tab_1(id INTEGER PRIMARY KEY AUTOINCREMENT, col_1 TEXT, col_2 TEXT, col_3 INTEGER)''')
 # B.execute('''INSERT INTO tab_1(col_1, col_2, col_3) VALUES ('hello', 'world', 7654321)''')
 # A.commit()
-
+#
 # B.execute('''SELECT * FROM tab_1''')                     # SELECT * FROM tab_1 - SQL - запрос (SELECT, FROM - кл. слова)
 # V = B.fetchall()
 # print(V)
@@ -86,7 +87,7 @@
 # a.commit()
 # b.execute('''SELECT * FROM tab_1''')
 # v = b.fetchall()
-# print(v)
+# print(v)                                           # Результат: [(3, 'hello', 'world'), (5, 'hello', 'world')]
                                                    # После каждого удаления требуется закомментировать уд-ные строки
 
                     # 21.6 Пример / Обновление записей в БД
@@ -95,5 +96,5 @@
 # a.commit()
 # b.execute('''SELECT * FROM tab_1''')
 # v = b.fetchall()
-# print(v)                                          # Результат: [ ... , (3, 'world', 'world'), ... ]
+# print(v)                                          # Результат: [(3, 'world', 'world'), (5, 'hello', 'world')]
 
