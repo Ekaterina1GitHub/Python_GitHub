@@ -122,79 +122,79 @@
 # и номеров групп студентов, имеющих оценки, равные только 5 или 6. Добавить возможность вывода учеников заданной группы
 # Добавить возможность вывода учеников претендующих на автомат(средний балл >= 7).
 
-class Students:                                                # Оценки - список из 5 цифр
-
-    def __init__(self, name, group, progress):
-        self.name = name
-        self.group = group
-        self.progress = progress
+# class Students:                                                # Оценки - список из 5 цифр
+#
+#     def __init__(self, name, group, progress):
+#         self.name = name
+#         self.group = group
+#         self.progress = progress
 
     # Чтобы print(school.get_list_of_students()) не выводило: [<__main__.Students object at 0x0000020B80C67F40>,
     # <__main__.Students object at 0x0000020B80C67D00>, <__main__.Students object at 0x0000020B80C67C70>],
     # необходимо добавить метод __repr__(вернёт имя студента):
 
-    def __repr__(self):
-        return self.name
-
-class School:
-
-    def __init__(self, students):           # Cоздание характеристики
-        self.students = students
-
-                                            # Доб-е студента м-дом add_student в школу:
-    def add_student(self, student):
-        self.students.append(student)       # Доб-е студента в список students
-
-    def get_list_of_students(self):
-        return self.students                # М-д get_list_of_students - будет выводить студентов
-
-    def remove(self, student, group):       # М-д remove - будет удалять ученика / уд-е по имени и группе
-        if student.group == group:          # student.group - у студента есть м-д group
-            self.students.remove(student)
-
-                                            # Выведение имён студентов:
-    def print_names(self):
-        for student in self.students:
-            print(student.name)
-                                            # Вывод учеников группы (вывод имён по группе):
-    def print_group(self, group):
-        st = []
-        for student in self.students:
-            if student.group == group:
-                st.append(student)
-        return st
-
-    def get_list_automate_students(self, auto_mark=7):              # М-д, выводящий автомат
-        list_automate = []
-        for student in self.students:
-            arifm = sum(student.progress) / len(student.progress)
-            if arifm >= auto_mark:
-                list_automate.append(student)
-        return list_automate
-
-    def get_list_of_students_with_needed_mark(self, grades):       # Вывод учеников с конкретными оценками:
-        list_student = self.students.copy()                        # Копир-е в пер. list_student списка студентов
-        for student in self.students:
-            for mark in student.progress:
-                if mark not in grades:
-                    list_student.remove(student)
-                    break
-        return list_student
-
-student1 = Students('Ekaterina', '196 группа', [10, 10, 10, 10, 10])
-student2 = Students('Dmitriy', '187 группа', [5, 5, 5, 5, 5])
-student3 = Students('Victor', '187 группа', [8, 9, 7, 8, 8])
-
-school = School([])
-
-school.add_student(student1)
-school.add_student(student2)
-school.add_student(student3)
-
-print(school.get_list_of_students())                               # Результат: [Ekaterina, Dmitriy, Victor]
-print(school.get_list_automate_students())                         # Результат: [Ekaterina, Victor]
-print(school.get_list_of_students_with_needed_mark([5]))           # Результат: [Dmitriy]
-print(school.print_group('187 группа'))                            # Результат: [Dmitriy, Victor]
+#     def __repr__(self):
+#         return self.name
+#
+# class School:
+#
+#     def __init__(self, students):           # Cоздание характеристики
+#         self.students = students
+#
+#                                             # Доб-е студента м-дом add_student в школу:
+#     def add_student(self, student):
+#         self.students.append(student)       # Доб-е студента в список students
+#
+#     def get_list_of_students(self):
+#         return self.students                # М-д get_list_of_students - будет выводить студентов
+#
+#     def remove(self, student, group):       # М-д remove - будет удалять ученика / уд-е по имени и группе
+#         if student.group == group:          # student.group - у студента есть м-д group
+#             self.students.remove(student)
+#
+#                                             # Выведение имён студентов:
+#     def print_names(self):
+#         for student in self.students:
+#             print(student.name)
+#                                             # Вывод учеников группы (вывод имён по группе):
+#     def print_group(self, group):
+#         st = []
+#         for student in self.students:
+#             if student.group == group:
+#                 st.append(student)
+#         return st
+#
+#     def get_list_automate_students(self, auto_mark=7):              # М-д, выводящий автомат
+#         list_automate = []
+#         for student in self.students:
+#             arifm = sum(student.progress) / len(student.progress)
+#             if arifm >= auto_mark:
+#                 list_automate.append(student)
+#         return list_automate
+#
+#     def get_list_of_students_with_needed_mark(self, grades):       # Вывод учеников с конкретными оценками:
+#         list_student = self.students.copy()                        # Копир-е в пер. list_student списка студентов
+#         for student in self.students:
+#             for mark in student.progress:
+#                 if mark not in grades:
+#                     list_student.remove(student)
+#                     break
+#         return list_student
+#
+# student1 = Students('Ekaterina', '196 группа', [10, 10, 10, 10, 10])
+# student2 = Students('Dmitriy', '187 группа', [5, 5, 5, 5, 5])
+# student3 = Students('Victor', '187 группа', [8, 9, 7, 8, 8])
+#
+# school = School([])
+#
+# school.add_student(student1)
+# school.add_student(student2)
+# school.add_student(student3)
+#
+# print(school.get_list_of_students())                               # Результат: [Ekaterina, Dmitriy, Victor]
+# print(school.get_list_automate_students())                         # Результат: [Ekaterina, Victor]
+# print(school.get_list_of_students_with_needed_mark([5]))           # Результат: [Dmitriy]
+# print(school.print_group('187 группа'))                            # Результат: [Dmitriy, Victor]
 
 
                     # 7 ЗАДАЧА (25.7)
